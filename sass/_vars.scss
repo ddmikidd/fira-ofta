@@ -1,0 +1,37 @@
+////////////////////////////////////////////////////////////////////////////////
+// Variables
+// --------------------
+// 
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+//
+// Fonts
+//
+$handwriting_font: 'Mrs Sheppards', cursive;
+$main_font: 'Titillium Web', sans-serif;
+
+//
+// Colors
+//
+$text_top_color: #fff;
+$text_pink_color: #EC0CA0;
+$text_blue_color: #23C5E3;
+
+//
+// Background
+//
+$top_bg_color: #fff;
+$pink_bg_color: #EC0CA0;
+$blue_bg_color: #23C5E3;
+
+
+//
+// Breakpoints
+//
+$mobile: 400px;
+$middle_bk_point: 600px;
+$bigger_bk_point: 800px;
+
+@import "compass";  
+@import "mixins";  

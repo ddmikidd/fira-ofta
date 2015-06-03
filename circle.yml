@@ -1,0 +1,8 @@
+test:
+  override:
+    - echo "<?php print '0';" |php
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: firaofta

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html manifest="firaofta.appcache">
+<head>
+  <title>Fira Ofta</title>
+  <meta charset="UTF-8">
+  <!-- for Facebook -->
+  <meta property="og:title" content="Prova på Fira Ofta" />
+  <meta property="og:description" content="Fira oftare! Din fördelsedag är inte bara en gång om året." />
+  <meta property="og:image" content="images/shared-image.png" />
+  <!-- for Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Prova på Fira Ofta" />
+  <meta name="twitter:description" content="Fira oftare! Din fördelsedag är inte bara en gång om året." />
+  <meta name="twitter:image" content="images/shared-image.png" />
+  <!-- for Favicon -->
+  <link rel="icon" href="images/icon/icon-16.png">
+  <link rel="apple-touch-icon" href="images/icon/icon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/icon/icon-58.png" sizes="58x58">
+  <link rel="apple-touch-icon" href="images/icon/icon-72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="images/icon/icon-114.png" sizes="114x114">
+  <link rel="apple-touch-icon" href="images/icon/icon-144.png" sizes="144x144">
+  
+  <script src="jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Mrs+Sheppards|Titillium+Web:400,900,700,300,600' rel='stylesheet' type='text/css'>
+  
+  <meta name="viewport" content="initial-scale=1">
+</head>
+
+<body>
+  <div class="header">
+    <video preload muted autoplay loop>
+      <source src="images/Firaofta.mp4" type="video/mp4" />
+      <source src="images/Firaofta.webm" type="video/webm" />
+    </video>
+  </div>
+  <div class="page">
+    <h1 class="headline1">Fira ofta!</h1>
+    <h1 class="headline2">Fira ofta!</h1>
+    <h1 class="headline3">Fira ofta!</h1>
+    <form action="#" id="myform" method="post" name="myform">
+      <div class="year-section">
+        <p class="q-title q-title1">Vilket år är du född?</p>
+        <p class="q-title q-title2 title-position1">Vilket år är du född?</p>
+        <p class="q-title q-title3 title-position2">Vilket år är du född?</p>
+        <div class="form-container">
+          <input type="text" name="year" class="year white-box-position" placeholder="Tex 1999" required>
+          <div class="pink-box-base pink-box-position"></div>
+          <div class="blue-box-base blue-box-position"></div>
+        </div>  
+      </div>
+      <div class="month-section">
+        <p class="q-title q-title1">vilken månad?</p>
+        <p class="q-title q-title2 title-position1">vilken månad?</p>
+        <p class="q-title q-title3 title-position2">vilken månad?</p>
+        <div class="form-container">
+          <input type="text" name="month" class="month white-box-position" placeholder="Tex Juli" required>
+          <div class="pink-box-base pink-box-position"></div>
+          <div class="blue-box-base blue-box-position"></div>
+        </div>  
+      </div>
+      <div class="day-section">
+        <p class="q-title q-title1">Dag?</p>
+        <p class="q-title q-title2 title-position1">Dag?</p>
+        <p class="q-title q-title3 title-position2">Dag?</p>
+        <div class="form-container">
+          <input type="text" name="day" class="day white-box-position" placeholder="Tex 22, inte måndag" required>
+          <div class="pink-box-base pink-box-position"></div>
+          <div class="blue-box-base blue-box-position"></div>
+        </div>  
+      </div>
+      <div class="submit-button">
+        <input type="submit" value="" class="big-circle-size">
+        <div class="circle-base big-circle-size blue-circle-base submit-blue-circle">
+        </div>
+        <div class="circle-base big-circle-size pink-circle-base submit-pink-circle">
+        </div>
+      </div>  
+    </form>
+    <div class="social-buttons">
+      <?php 
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+      ?>
+      <a target="_blank" href="http://www.facebook.com/sharer.php?s=100&amp;t=<?php echo urlencode('Pröva på Fira Ofta');?>&amp;u=<?php echo urlencode($url); ?>">
+        <div class="fb-button big-circle-size">
+          <div class="circle-base big-circle-size social-circle white-circle-base fb">
+          </div>
+          <div class="circle-base big-circle-size social-circle blue-circle-base social-blue-circle">
+          </div>
+          <div class="circle-base big-circle-size social-circle pink-circle-base social-pink-circle">
+          </div>
+        </div>
+      </a>
+      <?php
+        $hashtags = "fördelsedag,fira";
+      ?>
+      <a target="_blank" href="http://www.twitter.com/share?text=<?php echo urlencode('Pröva på Fira Ofta');?>&amp;url=<?php echo urlencode($url); ?>&amp;hashtags=<?php echo urlencode($hashtags); ?>">
+        <div class="tw-button big-circle-size">
+          <div class="circle-base big-circle-size social-circle white-circle-base tw">
+          </div>
+          <div class="circle-base big-circle-size social-circle blue-circle-base social-blue-circle">
+          </div>
+          <div class="circle-base big-circle-size social-circle pink-circle-base social-pink-circle">
+          </div>    
+        </div>
+      </a>  
+    </div>
+    <div id="error">Fel meddelande</div>
+    <div class="result-container">
+      <div class="result1-container">
+        <p id="year-result" class="result-text">
+          Om <span class="thicker-text" id="year-answer1"></span> fyller du <span class="thicker-text" id="year-answer2"></span>
+        </p>
+        <div class="box year-box white-r-box top-box-position1"></div>
+        <div class="box year-box blue-r-box box-position2"></div>
+        <div class="box year-box pink-r-box box-position3"></div>
+        <a target="_blank" href="http://www.facebook.com/sharer.php?s=100&amp;t=<?php echo urlencode('Pröva på Fira Ofta');?>&amp;u=<?php echo urlencode($url); ?>">
+        <!--<a href="#" class="share" id="share_button1" type='button_count'>-->
+          <div class="s-base fb-button-s fb-button-small1">
+            <div class="circle-base s-base white-circle-base fb-small">
+            </div>
+            <div class="circle-base s-base blue-circle-base social-blue-circle-small">
+            </div>
+            <div class="circle-base s-base pink-circle-base social-pink-circle-small">
+            </div>
+          </div>
+        </a> 
+      </div>
+      <div class="result2-container">
+        <p id="month-result" class="result-text">
+          Om <span class="thicker-text" id="month-answer1"></span> fyller du <span class="thicker-text" id="month-answer2"></span>
+        </p>
+        <div class="box md-box white-r-box box-position1"></div>
+        <div class="box md-box blue-r-box box-position2"></div>
+        <div class="box md-box pink-r-box box-position3"></div>
+        <a target="_blank" href="http://www.facebook.com/sharer.php?s=100&amp;t=<?php echo urlencode('Pröva på Fira Ofta');?>&amp;u=<?php echo urlencode($url); ?>">
+        <!--<a href="#" class="share" id="share_button2" type='button_count'>-->
+          <div class="s-base fb-button-s fb-button-small2">
+            <div class="circle-base s-base white-circle-base fb-small">
+            </div>
+            <div class="circle-base s-base blue-circle-base social-blue-circle-small">
+            </div>
+            <div class="circle-base s-base pink-circle-base social-pink-circle-small">
+            </div>
+          </div>
+        </a> 
+      </div>
+      <div class="result3-container">
+        <p id="day-result" class="result-text">
+          Om <span class="thicker-text" id="day-answer1"></span> fyller du <span class="thicker-text" id="day-answer2"></span>
+        </p>
+        <div class="box md-box white-r-box box-position1"></div>
+        <div class="box md-box blue-r-box box-position2"></div>
+        <div class="box md-box pink-r-box box-position3"></div>
+        <a target="_blank" href="http://www.facebook.com/sharer.php?s=100&amp;t=<?php echo urlencode('Pröva på Fira Ofta');?>&amp;u=<?php echo urlencode($url); ?>">
+        <!--<a href="#" class="share" id="share_button2" type='button_count'>-->
+          <div class="s-base fb-button-s fb-button-small3">
+            <div class="circle-base s-base white-circle-base fb-small">
+            </div>
+            <div class="circle-base s-base blue-circle-base social-blue-circle-small">
+            </div>
+            <div class="circle-base s-base pink-circle-base social-pink-circle-small">
+            </div>
+          </div>
+        </a> 
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

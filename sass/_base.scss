@@ -1,0 +1,567 @@
+html {
+  font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
+h1, h2, p, form, #error, .fb-share-button {
+  text-align: center;
+}
+
+h1, 
+#error {
+  font-family: $handwriting_font;
+  position: relative;
+}
+
+h1 {
+  @include font-size(15);
+  @include line-height(20.1);
+  @include letter-spacing(0.3);
+  @include breakpoint(smaller-screens) {
+    @include font-size(10);
+  }
+  @include breakpoint(mobile-screen) {
+    @include font-size(7.8);
+    @include line-height(15.1);
+  }
+}
+
+#error {
+  display: none;
+  @include font-size(5);
+  color: $text_blue_color; 
+  @include line-height(5.1);
+  @include letter-spacing(0.2);
+  margin-top: -210px;
+  @include breakpoint(medium-screens) {
+    @include font-size(4.2);  
+  }
+  @include breakpoint(middle-point) {
+    @include font-size(3.8);  
+    @include line-height(4.1);
+  }
+  @include breakpoint(mobile-screen) {
+    @include font-size(3.6);
+  }
+}
+
+.headline1 {
+  color: $text_top_color;
+  @include transform (roteate(352deg));
+  z-index: 2;
+}
+
+.headline2 {
+  color: $text_blue_color;
+  @include transform (roteate(354deg));
+  margin-top: -205px;
+  margin-top: -20.5rem;
+  left: 4px;
+  z-index: 1;
+  @include breakpoint(mobile-screen) {
+    margin-top: -154px;
+  }
+}
+
+.headline3 {
+  color: $text_pink_color;
+  @include transform (roteate(351deg));
+  margin-top: -192px;
+  margin-top: -19.2rem;
+  left: -9px;
+  z-index: 0;
+  @include breakpoint(mobile-screen) {
+    margin-top: -144px;
+    left: -6px;
+  }
+}
+
+.year-section {
+  position: relative;
+}
+
+.month-section, 
+.day-section {
+  position: relative;
+  margin-top: 50px;
+  @include breakpoint(mobile-screen) {
+    margin-top: 22px;
+  }
+}
+
+.social-buttons {
+  position: relative;
+  margin: 150px auto 0;
+  text-align: center;
+}
+
+/*Scaling social-buttons*/
+
+.fb-button, 
+.tw-button {
+  @include transition(all 1s ease);
+}
+
+.fb-button:hover, 
+.tw-button:hover {
+  @include transform (scale(1.1));
+}
+
+.fb-button-small1, 
+.fb-button-small2, 
+.fb-button-small3 {
+  @include transition(all 1s ease);
+}
+
+.fb-button-small1:hover, 
+.fb-button-small2:hover, 
+.fb-button-small3:hover {
+  @include transform (scale(1.3));
+  @include breakpoint(middle-point) {
+    @include transform (scale(1.1));
+  }
+}
+
+.social-buttons-result {
+  position: relative;
+  margin-top: -390px;
+  @include boxpositioning;
+}
+
+/* START style for questions */
+
+.q-title {
+  font-family: $main_font;
+  @include font-weight(9);
+  @include font-size(5.7);
+  @include line-height(8.7);
+  position: relative;
+  @include breakpoint(smaller-screens) {
+    @include font-size(4);
+  }
+  @include breakpoint(mobile-screen) {
+    @include font-size(3.2);
+    @include line-height(7);
+  }
+}
+
+.q-title1 {
+  color: $text_top_color;
+  z-index: 2;
+}
+
+.q-title2 {
+  color: $text_pink_color;
+  @include transform (rotate(361deg));
+  z-index: 1;
+}
+
+.q-title3 {
+  color: #23C5E3;
+  @include transform (rotate(359deg));
+  z-index: 0;
+}
+
+.title-position1 {
+  margin-top: -86px;
+  margin-top: -8.6rem;
+  margin-left: -2px;
+  @include breakpoint(mobile-screen) {
+    margin-top: -71px;
+  }
+}
+
+.title-position2 {
+  margin-top: -89px;
+  margin-top: -8.9rem;
+  margin-left: -3px;
+  @include breakpoint(mobile-screen) {
+    margin-top: -69px;
+  }
+}
+
+/* END style for questions */
+
+/* START style for boxes */
+
+.form-container {
+  margin-top: 100px;
+}
+
+input {
+  position: relative;
+  border: none;
+  &[type=text] {
+    @include font-size(3.5);
+    font-family: $main_font;
+    @include font-weight(3);
+    @include line-height(5.4);
+    text-align: center;
+    color: $text_pink_color;
+    width: 55%;
+    height: 82px;
+    @include boxpositioning;
+    @include breakpoint(middle-point) {
+     width: 68%;
+    }
+    @include breakpoint(smaller-screens) {
+      @include font-size(2.5);
+    }
+    @include breakpoint(mobile-screen) {
+      @include font-size(2);
+      height: 62px;
+    }
+  }
+   &:focus {
+    outline:none;
+    @include placeholder { 
+      opacity:0; 
+      transition:opacity 0.3s ease-in-out; 
+    }
+  }
+  @include placeholder {
+    color: $text_blue_color;
+    text-align: center;
+  }
+  &[type=submit] {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* IE8 */
+    top: -70px;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/Arrow.png);
+    background-color: $top_bg_color;
+  }
+}
+
+.pink-box-base, 
+.blue-box-base {
+  width: 55%;
+  height: 82px;
+  @include boxpositioning;
+  @include breakpoint(middle-point) {
+    width: 68%;
+  }
+  @include breakpoint(mobile-screen) {
+    height: 62px;
+  }
+}
+
+.pink-box-base {
+  background: $pink_bg_color;
+  position: relative;
+  z-index: 1;
+  @include transform (rotate(366deg));  
+}
+
+.blue-box-base {
+  background: $blue_bg_color;
+  position: relative;
+  z-index: 0;
+  @include transform (rotate(356deg));    
+}
+
+.white-box-position {
+  margin-top: -82px;
+  z-index: 2;
+}
+
+.pink-box-position {
+  margin-top: -80px;
+  left: 10px;
+  @include breakpoint(mobile-screen) {
+    margin-top: -65px;
+  }
+}
+
+.blue-box-position {
+  margin-top: -80px;
+  left: -6px;
+  @include breakpoint(mobile-screen) {
+    margin-top: -57px;
+  }
+}
+
+/* END style for boxes */
+
+/* START style for social-icons */
+
+.submit-button, 
+.fb-button, 
+.tw-button {
+  display: inline-block;
+}
+
+.fb-button-s {
+  position: relative;
+  display: table;
+  z-index: 4;
+}
+
+.fb-button-small1 {
+  margin: -10px 4% 0 82%;
+  @include breakpoint(mobile-screen) {
+    margin-left: 76%;
+  }
+}
+
+.fb-button-small2 {
+  margin: 0 2% 0 80%;
+  @include breakpoint(mobile-screen) {
+    margin-left: 76%;
+  }
+}
+
+.fb-button-small3 {
+  margin: 0 6% 0 84%;
+  @include breakpoint(mobile-screen) {
+    margin-left: 78%;
+  }
+}
+
+.circle-base {
+  border-radius: 50%;
+  behavior: url(PIE.htc);/* IE8 */
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.big-circle-size {
+  width: 110px;
+  height: 110px;
+  @include breakpoint(middle-point) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.fb-button, 
+.tw-button {
+  margin: 0 40px 0 30px;
+  @include breakpoint(middle-point) {
+    margin: 0 20px;
+  }
+}
+
+.s-base {
+  width: 75px;
+  height: 75px;
+  @include breakpoint(middle-point) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.fb {
+  background-image: url(../images/facebook-big.png);
+}
+
+.fb-small {
+  background-image: url(../images/facebook-small.png);
+}
+
+.tw {
+  background-image: url(../images/twitter-big.png);
+}
+
+.white-circle-base {
+  background-color: $top_bg_color;
+  z-index: 2;
+}
+
+.blue-circle-base {
+  background-color: $blue_bg_color;
+  z-index: 1;
+}
+
+.pink-circle-base {
+  background-color: $pink_bg_color;
+  z-index: 0;
+}
+
+.social-blue-circle {
+  margin-top: -104px;
+  left: -4px;
+  @include breakpoint(middle-point) {
+    margin-top: -57px;
+  }
+}
+
+.social-pink-circle {
+  margin-top: -123px;
+  left: -4px;
+  @include breakpoint(middle-point) {
+    margin-top: -67px;
+  }
+}
+
+.social-blue-circle-small {
+  margin-top: -74px;
+  left: -6px;
+  @include breakpoint(middle-point) {
+    margin-top: -62px;
+  }
+}
+
+.social-pink-circle-small {
+  margin-top: -73px;
+  left: 5px;
+  @include breakpoint(middle-point) {
+    margin-top: -57px;
+  }
+}
+
+/*Submit button animation*/
+
+.submit-button {
+  position: relative;
+  margin-top: 220px;
+  display: none;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 1s;
+  -moz-transition-property: -moz-transform;
+  -moz-transition-duration: 1s;
+  &:hover {
+    -webkit-animation: rotate 1.5s 1;
+    -moz-animation:    rotate 1.5s 1;
+    -o-animation:      rotate 1.5s 1;
+    animation:         rotate 1.5s 1;
+  }
+}
+
+@include keyframes(rotate) {
+  0%  { transform: rotate(0deg); }
+  20% { transform: rotate(10deg); }
+  50% { transform: rotate(0deg); }
+  70% { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.submit-blue-circle, 
+.submit-pink-circle {
+  @include boxpositioning;
+}
+
+.submit-blue-circle {
+  margin-top: -172px;
+  @include breakpoint(middle-point) {
+    margin-top: -125px;
+  }
+}
+
+.submit-pink-circle {
+  margin-top: -128px;
+  @include breakpoint(middle-point) {
+    margin-top: -70px;
+  }
+}
+
+/*END Submit button animation*/
+
+/*START result text*/
+
+.result-text {
+  font-family: $main_font;
+  @include font-weight(7);
+  @include font-size(5.7);
+  color: $text_blue_color;
+  @include line-height(6);
+  position: relative;
+  z-index: 3;
+  @include breakpoint(medium-screens) {
+    @include font-size(5);
+    @include line-height(4.5);
+  }
+  @include breakpoint(middle-point) {
+    @include font-size(3.5);
+    @include line-height(4);
+  }
+  @include breakpoint(mobile-screen) {
+    @include line-height(3.7);
+  }
+}
+
+.thicker-text {
+  font-family: $main_font;
+  @include font-weight(9);
+  color: $text_pink_color;
+}
+
+/*START result1-container*/
+
+.result1-container,
+.result2-container,
+.result3-container {
+  margin-top: 80px;
+  position: relative;
+  display: none;
+  @include breakpoint(mobile-screen) {
+    margin-top: 66px;
+  }
+}
+
+.box {
+  height: 135px;
+  position: relative;
+  @include boxpositioning;
+  @include breakpoint(mobile-screen) {
+    height: 110px;
+  }
+  
+}
+
+.year-box {
+  width: 90%;
+}
+
+.md-box {
+  width: 95%;
+}
+
+.white-r-box {
+  background: $top_bg_color;
+  z-index: 2;
+  @include transform (rotate(-2deg));  
+}
+
+.blue-r-box {
+  background: $blue_bg_color;
+  z-index: 1;
+}
+
+.pink-r-box {
+  background: $pink_bg_color;
+  z-index: 0;
+  @include transform (rotate(2deg));
+}
+
+.top-box-position1 {
+  margin-top: -98px;
+}
+
+.box-position2 {
+  margin-top: -120px;
+  @include breakpoint(mobile-screen) {
+    margin-top: -104px;
+  }
+}
+
+.box-position3 {
+  margin-top: -150px;
+  @include breakpoint(mobile-screen) {
+    margin-top: -121px;
+  }
+}
+
+.box-position1 {
+  margin-top: -126px;
+  @include breakpoint(mobile-screen) {
+    margin-top: -97px;
+  }
+}
+
+.page .fb_iframe_widget {
+  display: block;
+}
+

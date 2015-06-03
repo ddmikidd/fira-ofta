@@ -1,0 +1,85 @@
+////////////////////////////////////////////////////////////////////////////////
+// Custom Sass Mixins
+// --------------------
+// 
+////////////////////////////////////////////////////////////////
+
+//$sizeValue: 1.6 is default value.
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin font-weight($sizeValue) {
+  font-weight: $sizeValue * 100;
+}
+
+@mixin line-height($sizeValue: 1.6) {
+  line-height: ($sizeValue * 10) + px;
+  line-height: $sizeValue + rem;
+}
+
+@mixin letter-spacing($sizeValue: 1.6) {
+  letter-spacing: ($sizeValue * 10) + px;
+  letter-spacing: $sizeValue + rem;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+     @content;
+  }
+  &::-moz-placeholder {  /* Firefox 19+ */
+     @content;
+  }
+  &:-ms-input-placeholder {  
+     @content;
+  }
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+      @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin boxpositioning {
+  margin-right: auto;
+  margin-left: auto;
+  display: table;
+}
+
+
+@mixin breakpoint($media) {
+  @if ($media == wide-screens) {
+    @media screen and (min-width: $middle_bk_point) { @content; }
+  } 
+  @else if ($media == medium-screens) {
+    @media screen and (min-width: $middle_bk_point+1) and (max-width: $bigger_bk_point) { @content; }
+  }
+  @else if ($media == middle-point) {
+    @media screen and (max-width: $middle_bk_point) { @content; }
+  }
+  @else if ($media == smaller-screens) {
+    @media screen and (min-width: $mobile+1) and (max-width: $middle_bk_point) { @content; }
+  }
+  @else if ($media == mobile-screen) {
+    @media screen and (max-width: $mobile) { @content; }
+  }
+}
+
+
+
+
+

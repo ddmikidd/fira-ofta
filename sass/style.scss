@@ -1,0 +1,14 @@
+////////////////////////////////////////////////////////////////////////////////
+// Page Styling
+// --------------------
+// This file combines all partials into one main style sheet, to be loaded on 
+// all pages.
+////////////////////////////////////////////////////////////////////////////////
+
+@import "vars";  // Imports default variables and mixins.
+@import "reset";
+@import "layout";
+@import "base";  // Establishes general color and typography rules and browser resets
+@import "compass/css3";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
